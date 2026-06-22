@@ -1,150 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Arevarapu Wedding - Kiran & Venka Naga Lakshmi</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{width:100%;overflow-x:hidden;}
-body{font-family:'Cinzel',serif;background:radial-gradient(ellipse at center,#1a0035 0%,#0a0015 60%,#000008 100%);color:#f5e6c8;scroll-behavior:smooth;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Arevarapu Wedding - Kiran & Venka Naga Lakshmi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&display=swap');
 
-/* PAGE 1 - WELCOME WITH OM */
-.page1{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.watermarks{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0;}
-.wm{position:absolute;font-size:13px;color:rgba(212,175,55,0.06);font-family:'Cinzel',serif;letter-spacing:2px;white-space:nowrap;animation:floatUp linear infinite;}
-@keyframes floatUp{0%{opacity:0;transform:translateY(20px);}10%{opacity:1;}90%{opacity:1;}100%{opacity:0;transform:translateY(-20px);}}
-.stars{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
-.star{position:absolute;border-radius:50%;background:#d4af37;animation:twinkle ease-in-out infinite;}
-@keyframes twinkle{0%,100%{opacity:0.1;transform:scale(1);}50%{opacity:0.9;transform:scale(1.4);}}
-.card{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 50px;background:rgba(10,0,30,0.6);border:1px solid rgba(212,175,55,0.25);border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 0 60px rgba(120,0,200,0.2);max-width:520px;width:90%;animation:cardAppear 1.5s ease;}
-@keyframes cardAppear{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.om-wrap{margin-bottom:30px;filter:drop-shadow(0 0 30px #d4af37) drop-shadow(0 0 60px rgba(212,175,55,0.5));animation:omPulse 3s ease-in-out infinite;}
-@keyframes omPulse{0%,100%{filter:drop-shadow(0 0 25px #d4af37);transform:scale(1);}50%{filter:drop-shadow(0 0 50px #d4af37) drop-shadow(0 0 100px rgba(212,175,55,0.8));transform:scale(1.06);}}
-.om-text{font-size:110px;font-family:'Cinzel Decorative',serif;background:linear-gradient(180deg,#fff8dc 0%,#d4af37 35%,#b8860b 65%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;user-select:none;}
-.divider{width:180px;height:1px;background:linear-gradient(to right,transparent,#d4af37,transparent);margin:5px auto 22px;opacity:0.7;}
-.family-title{font-size:12px;letter-spacing:5px;color:#c8a8e0;text-transform:uppercase;margin-bottom:14px;}
-.invite-title{font-family:'Cinzel Decorative',serif;font-size:13px;color:rgba(212,175,55,0.75);letter-spacing:3px;text-transform:uppercase;margin-bottom:28px;}
-.scroll-hint{color:#b8a0d0;font-size:12px;letter-spacing:3px;animation:bounce 2s infinite;margin-top:25px;cursor:pointer;}
-@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{width:100%;overflow-x:hidden;}
+    body{font-family:'Cinzel',serif;background:radial-gradient(ellipse at center,#1a0035 0%,#0a0015 60%,#000008 100%);color:#f5e6c8;scroll-behavior:smooth;}
 
-/* PAGE 2 - INVITATION DETAILS */
-.page2{background:linear-gradient(180deg,#0d0025 0%,#150030 50%,#0a001a 100%);padding:60px 20px;position:relative;z-index:1;}
-.hero{max-width:900px;margin:0 auto 40px;text-align:center;}
-.welcome{font-size:18px;color:#c8a8e0;letter-spacing:4px;margin-bottom:20px;}
-.sloka-telugu{font-size:16px;color:#d4af37;margin:20px auto;max-width:500px;line-height:2;font-style:italic;border:1px solid rgba(212,175,55,0.3);padding:20px;border-radius:10px;background:rgba(212,175,55,0.05);}
-.couple{font-size:52px;color:#d4af37;text-shadow:0 2px 20px rgba(212,175,55,0.4);margin:20px 0;line-height:1.3;}
-.amp{font-size:40px;color:#9b59b6;display:block;margin:8px 0;}
-.muhurtam-time{font-size:20px;color:#e8d5b0;margin:10px 0;}
-.countdown{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
-.countdown-box{background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.4);border-radius:10px;padding:12px 18px;min-width:75px;text-align:center;}
-.countdown-num{font-size:32px;color:#d4af37;font-weight:bold;display:block;}
-.countdown-label{font-size:10px;color:#b8a0d0;letter-spacing:2px;text-transform:uppercase;margin-top:5px;}
-.section{max-width:800px;margin:40px auto;padding:30px;border:1px solid rgba(212,175,55,0.3);border-radius:12px;background:rgba(255,255,255,0.03);backdrop-filter:blur(5px);}
-.section h2{color:#d4af37;font-size:22px;letter-spacing:3px;text-align:center;margin-bottom:25px;border-bottom:2px solid rgba(212,175,55,0.3);padding-bottom:10px;}
-.event-row{display:flex;justify-content:space-between;align-items:center;margin:15px 0;padding:12px;background:rgba(212,175,55,0.05);border-radius:8px;border-left:3px solid #d4af37;}
-.event-name{font-size:16px;color:#d4af37;font-weight:bold;}
-.event-time{font-size:14px;color:#c8a8e0;}
-.venue-box{background:rgba(155,89,182,0.1);padding:20px;border-radius:10px;border:1px solid rgba(155,89,182,0.3);margin:20px 0;text-align:center;}
-.venue-box h3{color:#9b59b6;font-size:18px;margin-bottom:10px;}
-.venue-box p{color:#e8d5b0;font-size:15px;line-height:1.8;}
-.inviting{text-align:center;font-size:15px;color:#c8a8e0;line-height:2;margin:15px 0;}
-.inviting strong{color:#d4af37;}
-.blessing{text-align:center;font-size:17px;color:#d4af37;margin-top:30px;font-style:italic;padding:15px;background:rgba(212,175,55,0.08);border-radius:10px;}
-.music-btn{position:fixed;bottom:25px;right:25px;background:linear-gradient(135deg,#6a0dad,#d4af37);border:none;border-radius:50%;width:55px;height:55px;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(212,175,55,0.4);z-index:1000;transition:transform 0.2s;}
-.music-btn:hover{transform:scale(1.1);}
-@media(max-width:600px){.om-text{font-size:80px;}.card{padding:40px 28px;}.couple{font-size:36px;}.event-row{flex-direction:column;text-align:center;}.countdown-box{min-width:65px;}}
-</style>
+    .page1{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+    .watermarks{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0;}
+    .wm{position:absolute;font-size:13px;color:rgba(212,175,55,0.06);font-family:'Cinzel',serif;letter-spacing:2px;white-space:nowrap;animation:floatUp linear infinite;}
+    @keyframes floatUp{0%{opacity:0;transform:translateY(20px);}10%{opacity:1;}90%{opacity:1;}100%{opacity:0;transform:translateY(-20px);}}
+
+    .stars{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+    .star{position:absolute;border-radius:50%;background:#d4af37;animation:twinkle ease-in-out infinite;}
+    @keyframes twinkle{0%,100%{opacity:0.1;transform:scale(1);}50%{opacity:0.9;transform:scale(1.4);}}
+
+    .card{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 50px;background:rgba(10,0,30,0.6);border:1px solid rgba(212,175,55,0.25);border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 0 60px rgba(120,0,200,0.2);max-width:520px;width:90%;animation:cardAppear 1.5s ease;}
+    @keyframes cardAppear{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+    .om-wrap{margin-bottom:30px;filter:drop-shadow(0 0 30px #d4af37) drop-shadow(0 0 60px rgba(212,175,55,0.5));animation:omPulse 3s ease-in-out infinite;}
+    @keyframes omPulse{0%,100%{filter:drop-shadow(0 0 25px #d4af37);transform:scale(1);}50%{filter:drop-shadow(0 0 50px #d4af37) drop-shadow(0 0 100px rgba(212,175,55,0.8));transform:scale(1.06);}}
+
+    .om-text{font-size:110px;font-family:'Cinzel Decorative',serif;background:linear-gradient(180deg,#fff8dc 0%,#d4af37 35%,#b8860b 65%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;user-select:none;}
+    .divider{width:180px;height:1px;background:linear-gradient(to right,transparent,#d4af37,transparent);margin:5px auto 22px;opacity:0.7;}
+    .family-title{font-size:12px;letter-spacing:5px;color:#c8a8e0;text-transform:uppercase;margin-bottom:14px;}
+    .invite-title{font-family:'Cinzel Decorative',serif;font-size:13px;color:rgba(212,175,55,0.75);letter-spacing:3px;text-transform:uppercase;margin-bottom:28px;}
+    .scroll-hint{color:#b8a0d0;font-size:12px;letter-spacing:3px;animation:bounce 2s infinite;margin-top:25px;cursor:pointer;}
+    @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+    .page2{background:linear-gradient(180deg,#0d0025 0%,#150030 50%,#0a001a 100%);padding:60px 20px;position:relative;z-index:1;}
+    .hero{max-width:900px;margin:0 auto 40px;text-align:center;}
+    .welcome{font-size:18px;color:#c8a8e0;letter-spacing:4px;margin-bottom:20px;}
+    .sloka-telugu{font-size:16px;color:#d4af37;margin:20px auto;max-width:500px;line-height:2;font-style:italic;border:1px solid rgba(212,175,55,0.3);padding:20px;border-radius:10px;background:rgba(212,175,55,0.05);}
+    .couple{font-size:52px;color:#d4af37;text-shadow:0 2px 20px rgba(212,175,55,0.4);margin:20px 0;line-height:1.3;}
+    .amp{font-size:40px;color:#9b59b6;display:block;margin:8px 0;}
+    .muhurtam-time{font-size:20px;color:#e8d5b0;margin:10px 0;}
+    .countdown{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap;}
+    .countdown-box{background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.4);border-radius:10px;padding:12px 18px;min-width:75px;text-align:center;}
+    .countdown-num{font-size:32px;color:#d4af37;font-weight:bold;display:block;}
+    .countdown-label{font-size:10px;color:#b8a0d0;letter-spacing:2px;text-transform:uppercase;margin-top:5px;}
+
+    .section{max-width:800px;margin:40px auto;padding:30px;border:1px solid rgba(212,175,55,0.3);border-radius:12px;background:rgba(255,255,255,0.03);backdrop-filter:blur(5px);}
+    .section h2{color:#d4af37;font-size:22px;letter-spacing:3px;text-align:center;margin-bottom:25px;border-bottom:2px solid rgba(212,175,55,0.3);padding-bottom:10px;}
+    .event-row{display:flex;justify-content:space-between;align-items:center;margin:15px 0;padding:12px;background:rgba(212,175,55,0.05);border-radius:8px;border-left:3px solid #d4af37;}
+    .event-name{font-size:16px;color:#d4af37;font-weight:bold;}
+    .event-time{font-size:14px;color:#c8a8e0;}
+
+    .venue-box{background:rgba(155,89,182,0.1);padding:20px;border-radius:10px;border:1px solid rgba(155,89,182,0.3);margin:20px 0;text-align:center;}
+    .venue-box h3{color:#9b59b6;font-size:18px;margin-bottom:10px;}
+    .venue-box p{color:#e8d5b0;font-size:15px;line-height:1.8;}
+
+    .inviting{text-align:center;font-size:15px;color:#c8a8e0;line-height:2;margin:15px 0;}
+    .inviting strong{color:#d4af37;}
+    .blessing{text-align:center;font-size:17px;color:#d4af37;margin-top:30px;font-style:italic;padding:15px;background:rgba(212,175,55,0.08);border-radius:10px;}
+
+    .music-btn{position:fixed;bottom:25px;right:25px;background:linear-gradient(135deg,#6a0dad,#d4af37);border:none;border-radius:50%;width:55px;height:55px;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(212,175,55,0.4);z-index:1000;transition:transform 0.2s;}
+    .music-btn:hover{transform:scale(1.1);}
+
+    @media(max-width:600px){
+      .om-text{font-size:80px;}
+      .card{padding:40px 28px;}
+      .couple{font-size:36px;}
+      .event-row{flex-direction:column;text-align:center;}
+      .countdown-box{min-width:65px;}
+    }
+  </style>
 </head>
 <body>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./BGM.mp3" type="audio/mpeg">
+  </audio>
 
-<audio id="bgMusic" loop preload="auto"><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"></audio>
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#127925;</button>
 
-<!-- STARS & WATERMARKS (FIXED BACKGROUND) -->
-<div class="stars" id="stars"></div>
-<div class="watermarks" id="watermarks"></div>
+  <div class="stars" id="stars"></div>
+  <div class="watermarks" id="watermarks"></div>
 
-<!-- PAGE 1: WELCOME OM -->
-<div class="page1">
-  <div class="card">
-    <div class="om-wrap"><div class="om-text">&#x0950;</div></div>
-    <div class="divider"></div>
-    <div class="family-title">Arevarapu Family</div>
-    <div class="invite-title">Joyfully Invites You To</div>
-    <div class="divider"></div>
-    <div class="scroll-hint" onclick="document.querySelector('.page2').scrollIntoView({behavior:'smooth'})">&#8595; Scroll for Details &#8595;</div>
-  </div>
-</div>
-
-<!-- PAGE 2: INVITATION DETAILS -->
-<div class="page2">
-  <div class="hero">
-    <div class="welcome">&#x1F339; Welcome &#x1F339;</div>
-    <div class="sloka-telugu">
-      &#x0C38;&#x0C41;&#x0C2E;&#x0C02;&#x0C17;&#x0C33;&#x0C3F; &#x0C2E;&#x0C02;&#x0C17;&#x0C33;&#x0C02; &#x0C2D;&#x0C35;&#x0C24;&#x0C41;<br>
-      &#x0C2E;&#x0C02;&#x0C17;&#x0C³;&#x0C02; &#x0C35;&#x0C3F;&#x0C37;&#x0C4D;&#x0C23;&#x0C41; &#x0C26;&#x0C47;&#x0C35;&#x0C24;<br>
-      <span style="font-size:13px;color:#9b7fc0;display:block;margin-top:8px;">May auspiciousness and prosperity bless this union</span>
-    </div>
-    <div class="divider"></div>
-    <div class="couple">Kiran Kumar<span class="amp">&amp;</span>Venkata Naga Lakshmi</div>
-    <div class="muhurtam-time">Marriage Muhurtham at <strong style="color:#d4af37;">02:25 AM</strong></div>
-    <div style="font-size:14px;color:#c8a8e0;margin-top:5px;">Wednesday, 24th June 2026</div>
-    <div class="countdown">
-      <div class="countdown-box"><span class="countdown-num" id="days">00</span><span class="countdown-label">Days</span></div>
-      <div class="countdown-box"><span class="countdown-num" id="hours">00</span><span class="countdown-label">Hours</span></div>
-      <div class="countdown-box"><span class="countdown-num" id="mins">00</span><span class="countdown-label">Mins</span></div>
-      <div class="countdown-box"><span class="countdown-num" id="secs">00</span><span class="countdown-label">Secs</span></div>
+  <div class="page1">
+    <div class="card">
+      <div class="om-wrap"><div class="om-text">&#x0950;</div></div>
+      <div class="divider"></div>
+      <div class="family-title">Arevarapu Family</div>
+      <div class="invite-title">Joyfully Invites You To</div>
+      <div class="divider"></div>
+      <div class="scroll-hint" onclick="document.querySelector('.page2').scrollIntoView({behavior:'smooth'})">&#8595; Scroll for Details &#8595;</div>
     </div>
   </div>
 
-  <div class="section">
-    <h2>&#128100; Inviting You</h2>
-    <div class="inviting">
-      <strong>Groom's Parents:</strong> Sri. Pandu Ranaga Rao & Smt. Lalitha Kumari<br>
-      <strong>Grand Parents:</strong> Sri.D. Venkteswararo & Smt. Blayogini<br>
+  <div class="page2">
+    <div class="hero">
+      <div class="welcome">&#x1F339; Welcome &#x1F339;</div>
+      <div class="sloka-telugu">
+        &#x0C38;&#x0C41;&#x0C2E;&#x0C02;&#x0C17;&#x0C33;&#x0C3F; &#x0C2E;&#x0C02;&#x0C17;&#x0C33;&#x0C02; &#x0C2D;&#x0C35;&#x0C24;&#x0C41;<br>
+        &#x0C2E;&#x0C02;&#x0C17;&#x0C33;&#x0C02; &#x0C35;&#x0C3F;&#x0C37;&#x0C4D;&#x0C23;&#x0C41; &#x0C26;&#x0C47;&#x0C35;&#x0C24;<br>
+        <span style="font-size:13px;color:#9b7fc0;display:block;margin-top:8px;">May auspiciousness and prosperity bless this union</span>
+      </div>
+
+      <div class="divider"></div>
+      <div class="couple">Kiran Kumar<span class="amp">&amp;</span>Venkata Naga Lakshmi</div>
+      <div class="muhurtam-time">Marriage Muhurtham at <strong style="color:#d4af37;">02:25 AM</strong></div>
+      <div style="font-size:14px;color:#c8a8e0;margin-top:5px;">Wednesday, 24th June 2026</div>
+
+      <div class="countdown">
+        <div class="countdown-box"><span class="countdown-num" id="days">00</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="hours">00</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="mins">00</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="secs">00</span><span class="countdown-label">Secs</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>&#128100; Inviting You</h2>
+      <div class="inviting">
+        <strong>Groom's Parents:</strong> Sri. Pandu Ranaga Rao &amp; Smt. Lalitha Kumari<br>
+        <strong>Grand Parents:</strong> Sri.D. Venkteswararo &amp; Smt. Blayogini<br>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>&#128197; Wedding Schedule</h2>
+      <div class="event-row"><div class="event-name">&#127775; Haldi Ceremony</div><div class="event-time">8:00 AM</div></div>
+      <div class="event-row"><div class="event-name">&#128142; Marriage Muhurtham</div><div class="event-time">02:20 AM</div></div>
+      <div class="event-row"><div class="event-name">&#127870; Reception</div><div class="event-time">7:00 PM</div></div>
+      <div class="event-row"><div class="event-name">&#127869; Dinner</div><div class="event-time">7:30 PM onwards</div></div>
+    </div>
+
+    <div class="section">
+      <h2>&#128205; Venue</h2>
+      <div class="venue-box">
+        <h3>Sri Subhamasthu Kalyanamandapam</h3>
+        <p>Nagayalanka, Krishna - 52120<br>Andhra Pradesh, India</p>
+        <p style="margin-top:10px;font-size:13px;color:#9b7fc0;">(Same venue for Marriage, Reception & Dinner)</p>
+        <div style="margin-top:12px;">
+          <a href="https://www.google.com/maps/place/Sri+Subhamasthu+Kalyanamandapam+Nagayalanka" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#9b59b6,#7d3c98);color:#fff;padding:8px 18px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:bold;letter-spacing:1px;">&#128205; Get Directions to Venue</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="blessing">
+        &#x1F64F; We warmly invite you to join us in celebrating this joyous occasion.<br>
+        Please grace us with your presence and bless the couple.<br>
+        <span style="font-size:15px;color:#c8a8e0;margin-top:8px;display:block;">Your blessings mean the world to us &#x2728;</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:40px 20px;color:#7a5c9a;font-size:13px;letter-spacing:2px;">
+      With Love & Blessings<br>
+      <span style="color:#d4af37;font-size:14px;margin-top:8px;display:block;">Arevarapu' Family</span>
     </div>
   </div>
 
-  <div class="section">
-    <h2>&#128197; Wedding Schedule</h2>
-    <div class="event-row"><div class="event-name">&#127775; Haldi Ceremony</div><div class="event-time">8:00 AM</div></div>
-    <div style="font-size:13px;color:#c8a8e0;padding:8px 15px;background:rgba(155,89,182,0.05);border-radius:6px;margin:10px 0;"><strong style="color:#9b59b6;">
-    <div class="event-row"><div class="event-name">&#128142; Marriage Muhurtham</div><div class="event-time">02:20 AM</div></div>
-    <div class="event-row"><div class="event-name">&#127870; Reception</div><div class="event-time">7:00 PM</div></div>
-    <div class="event-row"><div class="event-name">&#127869; Dinner</div><div class="event-time">7:30 PM onwards</div></div>
-  </div>
+  <script>
+    const sc = document.getElementById('stars');
+    for(let i=0;i<90;i++){
+      const s=document.createElement('div');
+      s.className='star';
+      const sz=(Math.random()*2.5+0.5)+'px';
+      s.style.cssText=`width:${sz};height:${sz};top:${Math.random()*100}%;left:${Math.random()*100}%;animation-duration:${2+Math.random()*4}s;animation-delay:${Math.random()*5}s;`;
+      sc.appendChild(s);
+    }
 
-  <div class="section">
-    <h2>&#128205; Venue</h2>
-    <div class="venue-box">
-      <h3>Sri Subhamasthu Kalyanamandapam</h3>
-      <p>Nagayalanka, Krishna - 52120<br>Andhra Pradesh, India</p>
-      <p style="margin-top:10px;font-size:13px;color:#9b7fc0;">(Same venue for Marriage, Reception & Dinner)</p><div style="margin-top:12px;"><a href="https://www.google.com/maps/place/Sri+Subhamasthu+Kalyanamandapam+Nagayalanka" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#9b59b6,#7d3c98);color:#fff;padding:8px 18px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:bold;letter-spacing:1px;">&#128205; Get Directions to Venue</a></div>
-    </div>
-  </div>
+    const slokas=['Om Namah Shivaya','Shubham Bhavatu','Mangalam Bhagavan Vishnu','Om Shanti Shanti Shantih','Sarvey Bhavantu Sukhinah','Om Namo Narayanaya','Shubha Vivaah','Mangalaya Tano Harih','Om Gam Ganapataye Namah','Satyam Shivam Sundaram','Om Sri Maha Lakshmyai Namah','Vivah Mangalam'];
+    const wc=document.getElementById('watermarks');
 
-  <div class="section">
-    <div class="blessing">
-      &#x1F64F; We warmly invite you to join us in celebrating this joyous occasion.<br>
-      Please grace us with your presence and bless the couple.<br>
-      <span style="font-size:15px;color:#c8a8e0;margin-top:8px;display:block;">Your blessings mean the world to us &#x2728;</span>
-    </div>
-  </div>
+    for(let i=0;i<30;i++){
+      const w=document.createElement('div');
+      w.className='wm';
+      w.textContent=slokas[Math.floor(Math.random()*slokas.length)];
+      w.style.cssText=`left:${Math.random()*90}%;top:${Math.random()*90}%;font-size:${10+Math.random()*8}px;animation-duration:${8+Math.random()*10}s;animation-delay:${Math.random()*8}s;transform:rotate(${-15+Math.random()*30}deg);`;
+      wc.appendChild(w);
+    }
 
-  <div style="text-align:center;padding:40px 20px;color:#7a5c9a;font-size:13px;letter-spacing:2px;">
-    With Love & Blessings<br>
-    <span style="color:#d4af37;font-size:14px;margin-top:8px;display:block;">Arevarapu' Family</span>
-  </div>
-</div>
+    const weddingDate = new Date('2026-06-24T02:25:00');
 
-<script>
-const sc=document.getElementById('stars');for(let i=0;i<90;i++){const s=document.createElement('div');s.className='star';const sz=(Math.random()*2.5+0.5)+'px';s.style.cssText=`width:${sz};height:${sz};top:${Math.random()*100}%;left:${Math.random()*100}%;animation-duration:${2+Math.random()*4}s;animation-delay:${Math.random()*5}s;`;sc.appendChild(s);}
-const slokas=['Om Namah Shivaya','Shubham Bhavatu','Mangalam Bhagavan Vishnu','Om Shanti Shanti Shantih','Sarvey Bhavantu Sukhinah','Om Namo Narayanaya','Shubha Vivaah','Mangalaya Tano Harih','Om Gam Ganapataye Namah','Satyam Shivam Sundaram','Om Sri Maha Lakshmyai Namah','Vivah Mangalam'];
-const wc=document.getElementById('watermarks');for(let i=0;i<30;i++){const w=document.createElement('div');w.className='wm';w.textContent=slokas[Math.floor(Math.random()*slokas.length)];w.style.cssText=`left:${Math.random()*90}%;top:${Math.random()*90}%;font-size:${10+Math.random()*8}px;animation-duration:${8+Math.random()*10}s;animation-delay:${Math.random()*8}s;transform:rotate(${-15+Math.random()*30}deg);`;wc.appendChild(w);}
-const weddingDate=new Date('2026-06-24T02:25:00');function updateCountdown(){const now=new Date();const diff=weddingDate-now;if(diff<=0){document.getElementById('days').textContent='00';return;}document.getElementById('days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');document.getElementById('secs').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');}setInterval(updateCountdown,1000);updateCountdown();
-let playing=false;const music=document.getElementById('bgMusic');document.addEventListener('click',()=>{if(!playing){music.play().then(()=>{playing=true;document.getElementById('musicBtn').innerHTML='&#128264;';}).catch(()=>{});}},{once:true});function toggleMusic(){if(playing){music.pause();playing=false;document.getElementById('musicBtn').innerHTML='&#127925;';}else{music.play();playing=true;document.getElementById('musicBtn').innerHTML='&#128264;';}}
-</script>
+    function updateCountdown(){
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if(diff <= 0){
+        document.getElementById('days').textContent='00';
+        document.getElementById('hours').textContent='00';
+        document.getElementById('mins').textContent='00';
+        document.getElementById('secs').textContent='00';
+        return;
+      }
+
+      document.getElementById('days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+      document.getElementById('hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+      document.getElementById('mins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+      document.getElementById('secs').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+    }
+
+    setInterval(updateCountdown,1000);
+    updateCountdown();
+
+    let playing = false;
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+
+    music.volume = 0.6;
+
+    function toggleMusic(){
+      if(playing){
+        music.pause();
+        playing = false;
+        musicBtn.innerHTML = '&#127925;';
+      }else{
+        music.play().then(()=>{
+          playing = true;
+          musicBtn.innerHTML = '&#128264;';
+        }).catch(()=>{});
+      }
+    }
+  </script>
 </body>
 </html>
