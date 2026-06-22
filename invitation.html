@@ -731,7 +731,7 @@
       <h2>👤 Inviting You</h2>
       <div class="inviting">
         <strong>Groom's Parents:</strong> Sri. Pandu Ranaga Rao &amp; Smt. Lalitha Kumari<br />
-        <strong>Grand Parents:</strong> Sri. D. Venkteswararo &amp; Smt. Blayogini
+        <strong>Grand Parents:</strong> Sri. D.Venkteswararo &amp; Smt. Balayogini
       </div>
     </div>
 
@@ -873,15 +873,22 @@
     function stopMusic() {
       music.pause();
       music.currentTime = 0;
+      music.muted = true;
     }
 
     function startMusic() {
+      if (document.hidden) return;
+
+      music.muted = false;
       const playPromise = music.play();
 
       if (playPromise !== undefined) {
         playPromise.catch(() => {
           const resumeAudio = () => {
-            music.play().catch(() => {});
+            if (!document.hidden) {
+              music.muted = false;
+              music.play().catch(() => {});
+            }
           };
 
           document.addEventListener('click', resumeAudio, { once: true });
@@ -891,9 +898,20 @@
       }
     }
 
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        music.pause();
+        music.muted = true;
+      } else {
+        music.muted = false;
+        music.play().catch(() => {});
+      }
+    }
+
     window.addEventListener('load', startMusic);
     window.addEventListener('beforeunload', stopMusic);
     window.addEventListener('pagehide', stopMusic);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
   </script>
 </body>
 </html>
