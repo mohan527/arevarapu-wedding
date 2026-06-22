@@ -197,8 +197,7 @@
       justify-content: center;
       text-align: center;
       padding: 88px 50px 60px;
-      background:
-        linear-gradient(180deg, rgba(69, 10, 28, 0.78), rgba(24, 2, 12, 0.80));
+      background: linear-gradient(180deg, rgba(69, 10, 28, 0.78), rgba(24, 2, 12, 0.80));
       border: 1px solid rgba(212, 175, 55, 0.34);
       border-radius: 24px;
       backdrop-filter: blur(12px);
@@ -669,9 +668,11 @@
       <div class="arch-ornament"><span>❦</span></div>
       <div class="family-title">Arevarapu Family</div>
       <div class="invite-title">Joyfully Invites You To</div>
+
       <p class="subtitle-note">
         celebrate the sacred wedding of Kiran Kumar and Venkata Naga Lakshmi in a graceful traditional gathering filled with devotion, blessings, and family joy.
       </p>
+
       <div class="arch-ornament"><span>❦</span></div>
 
       <div class="scroll-hint" onclick="document.querySelector('.page2').scrollIntoView({ behavior: 'smooth' })">
@@ -704,9 +705,7 @@
         Marriage Muhurtham at <strong style="color:#d4af37;">02:25 AM</strong>
       </div>
 
-      <div class="date-text">
-        Wednesday, 24th June 2026
-      </div>
+      <div class="date-text">Wednesday, 24th June 2026</div>
 
       <div class="countdown">
         <div class="countdown-box">
@@ -770,12 +769,12 @@
 
         <div style="margin-top:16px;">
           <a
-  href="https://maps.google.com/?q=Sri+Subhamasthu+Kalyanamandapam,Nagayalanka,Krishna,Andhra+Pradesh,521120"
-  target="_blank"
-  rel="noopener noreferrer"
-  style="display:inline-block;background:linear-gradient(135deg,#7f1630,#c89b2c);color:#fff;padding:12px 24px;border-radius:24px;text-decoration:none;font-size:14px;font-weight:bold;letter-spacing:1px;box-shadow:0 6px 18px rgba(0,0,0,0.18);"
->
-  📍 Open in Google Maps
+            href="https://maps.google.com/?q=Sri+Subhamasthu+Kalyanamandapam,Nagayalanka,Krishna,Andhra+Pradesh,521120"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display:inline-block;background:linear-gradient(135deg,#7f1630,#c89b2c);color:#fff;padding:12px 24px;border-radius:24px;text-decoration:none;font-size:14px;font-weight:bold;letter-spacing:1px;box-shadow:0 6px 18px rgba(0,0,0,0.18);"
+          >
+            📍 Open in Google Maps
           </a>
         </div>
       </div>
@@ -871,6 +870,11 @@
     const music = document.getElementById('bgMusic');
     music.volume = 0.6;
 
+    function stopMusic() {
+      music.pause();
+      music.currentTime = 0;
+    }
+
     function startMusic() {
       const playPromise = music.play();
 
@@ -878,9 +882,6 @@
         playPromise.catch(() => {
           const resumeAudio = () => {
             music.play().catch(() => {});
-            document.removeEventListener('click', resumeAudio);
-            document.removeEventListener('touchstart', resumeAudio);
-            document.removeEventListener('scroll', resumeAudio);
           };
 
           document.addEventListener('click', resumeAudio, { once: true });
@@ -891,7 +892,8 @@
     }
 
     window.addEventListener('load', startMusic);
+    window.addEventListener('beforeunload', stopMusic);
+    window.addEventListener('pagehide', stopMusic);
   </script>
 </body>
 </html>
-
