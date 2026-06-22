@@ -194,10 +194,40 @@
       60%, 100% { left: 130%; }
     }
 
+    .music-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 50;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(10, 0, 30, 0.7);
+      color: #f5e17a;
+      font-size: 22px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.45);
+    }
+
     @media (max-width: 480px) {
       .om-text { font-size: 80px; }
       .card { padding: 40px 28px; }
       .btn { padding: 14px 32px; font-size: 12px; }
+      .music-btn {
+        top: 14px;
+        right: 14px;
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -206,6 +236,8 @@
     <source src="./BGM.mp3" type="audio/mpeg" />
   </audio>
 
+  <button class="music-btn" id="musicBtn" aria-label="Toggle background music">🎵</button>
+
   <div class="stars" id="stars"></div>
   <div class="watermarks" id="watermarks"></div>
 
@@ -213,10 +245,12 @@
     <div class="om-wrap">
       <div class="om-text">&#x0950;</div>
     </div>
+
     <div class="divider"></div>
     <div class="family-title">Arevarapu Family</div>
     <div class="invite-title">Joyfully Invites You To</div>
     <div class="divider"></div>
+
     <a class="btn" id="enterBtn" href="index.html">&#x1F4AB; Arevarapu's Wedding</a>
   </div>
 
@@ -254,25 +288,75 @@
       wc.appendChild(w);
     }
 
+    let playing = false;
+    let triedAutoplay = false;
+
     const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
     const enterBtn = document.getElementById('enterBtn');
 
     music.volume = 0.6;
 
-    function startMusic() {
-      music.play().catch(() => {});
+    function updateMusicButton() {
+      musicBtn.innerHTML = playing ? '🔈' : '🎵';
     }
 
-    window.addEventListener('load', () => {
-      music.play().catch(() => {
-        document.addEventListener('click', startMusic, { once: true });
-        document.addEventListener('touchstart', startMusic, { once: true });
+    function playMusic() {
+      return music.play().then(() => {
+        playing = true;
+        updateMusicButton();
+      }).catch(() => {});
+    }
+
+    function pauseMusic() {
+      music.pause();
+      playing = false;
+      updateMusicButton();
+    }
+
+    function toggleMusic() {
+      if (playing) {
+        pauseMusic();
+      } else {
+        playMusic();
+      }
+    }
+
+    function startMusicOnce() {
+      if (!playing) {
+        playMusic();
+      }
+      document.removeEventListener('click', startMusicOnce);
+      document.removeEventListener('touchstart', startMusicOnce);
+    }
+
+    musicBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleMusic();
+    });
+
+    enterBtn.addEventListener('click', function () {
+      if (!playing) {
+        playMusic();
+      }
+    });
+
+    window.addEventListener('load', function () {
+      if (triedAutoplay) return;
+      triedAutoplay = true;
+
+      music.play().then(() => {
+        playing = true;
+        updateMusicButton();
+      }).catch(() => {
+        playing = false;
+        updateMusicButton();
+        document.addEventListener('click', startMusicOnce, { once: true });
+        document.addEventListener('touchstart', startMusicOnce, { once: true });
       });
     });
 
-    enterBtn.addEventListener('click', () => {
-      music.play().catch(() => {});
-    });
+    updateMusicButton();
   </script>
 </body>
 </html>
